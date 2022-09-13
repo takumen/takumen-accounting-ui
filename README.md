@@ -1,2 +1,2 @@
-# takumen-accounting-ui
+# takumen-accounting-tool-ui
 Created with CodeSandbox

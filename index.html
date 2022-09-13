@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <title>宅麺.com経理ツール</title>
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+      integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC"
+      crossorigin="anonymous"
+    />
+    <script src="action.js"></script>
+  </head>
+  <body>
+    <div class="container mt-3">
+      <h3>宅麺.com経理ツール</h3>
+      <hr />
+      <ul class="nav nav-tabs">
+        <li class="nav-item">
+          <a class="nav-link active" aria-current="page" href="/">トップ</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="/histories.html">インポート履歴一覧</a>
+        </li>
+      </ul>
+      <div class="card mt-3">
+        <div class="card-body">
+          <h5>振込先を発注先に同期</h5>
+          <div class="mb-3">
+            Kintoneの振込先をBoardの発注先に連携してください。エラーが出る場合は、データを修正の上、再度実行してください。
+          </div>
+          <div>
+            <button class="btn btn-primary" onclick="syncCompanies();">
+              同期する
+            </button>
+          </div>
+        </div>
+      </div>
+      <div class="card mt-3">
+        <div class="card-body">
+          <h5>支払データをBoardへインポート</h5>
+          <div class="mb-3">
+            Kintoneから収集したデータと、ロジザード入荷ファイルを合わせて、支払データを生成し、Boardにインポートします。
+          </div>
+          <form>
+            <div class="mb-3">
+              <label for="month" class="form-label">対象月</label>
+              <input
+                type="month"
+                id="month"
+                name="start"
+                min="2022-01"
+                class="form-control"
+                required
+              />
+            </div>
+
+            <div class="mb-3">
+              <label for="logizard_file" class="form-label"
+                >ロジザード入荷ファイル</label
+              >
+              <input
+                id="logizard_file"
+                type="file"
+                class="form-control"
+                aria-label="file example"
+                required
+              />
+            </div>
+
+            <div>
+              <button class="btn btn-primary" type="submit">
+                インポートする
+              </button>
+            </div>
+          </form>
+        </div>
+      </div>
+    </div>
+  </body>
+</html>
