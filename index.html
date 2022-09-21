@@ -44,38 +44,37 @@
           <div class="mb-3">
             Kintoneから収集したデータと、ロジザード入荷ファイルを合わせて、支払データを生成し、Boardにインポートします。
           </div>
-          <form>
-            <div class="mb-3">
-              <label for="month" class="form-label">対象月</label>
-              <input
-                type="month"
-                id="month"
-                name="start"
-                min="2022-01"
-                class="form-control"
-                required
-              />
-            </div>
+          <div class="mb-3">
+            <label for="month" class="form-label">対象月</label>
+            <input
+              type="month"
+              id="month"
+              name="month"
+              min="2022-01"
+              class="form-control"
+              required
+            />
+          </div>
 
-            <div class="mb-3">
-              <label for="logizard_file" class="form-label"
-                >ロジザード入荷ファイル</label
-              >
-              <input
-                id="logizard_file"
-                type="file"
-                class="form-control"
-                aria-label="file example"
-                required
-              />
-            </div>
+          <div class="mb-3">
+            <label for="logizard_file" class="form-label"
+              >ロジザード入荷ファイル</label
+            >
+            <input
+              id="logizard_file"
+              name="logizard_file"
+              type="file"
+              class="form-control"
+              aria-label="file example"
+              required
+            />
+          </div>
 
-            <div>
-              <button class="btn btn-primary" type="submit">
-                インポートする
-              </button>
-            </div>
-          </form>
+          <div>
+            <button class="btn btn-primary"  onclick="syncPayouts();">
+              インポートする
+            </button>
+          </div>
         </div>
       </div>
     </div>

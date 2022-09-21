@@ -16,6 +16,16 @@ function syncCompanies() {
     });
 }
 
+function syncPayouts() {
+  const fd = new FormData();
+  const input_month = document.querySelector("input[name=input_month]");
+  const input_logizard_file = document.querySelector(
+    "input[name=logizard_file"
+  );
+
+  alert(input_month.value);
+}
+
 function jsonToCsv(json, delimiter) {
   var header = Object.keys(json[0]).join(delimiter) + "\n";
   var body = json
