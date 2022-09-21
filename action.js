@@ -16,6 +16,11 @@ function syncCompanies() {
     });
 }
 
+function syncPayouts() {
+  const fd = new FormData();
+  alert("hoge");
+}
+
 function jsonToCsv(json, delimiter) {
   var header = Object.keys(json[0]).join(delimiter) + "\n";
   var body = json
