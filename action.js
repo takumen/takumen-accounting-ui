@@ -17,13 +17,42 @@ function syncCompanies() {
 }
 
 function syncPayouts() {
-  const fd = new FormData();
-  const input_month = document.querySelector("input[name=input_month]");
+  startLoading();
+  const formData = new FormData();
+  const input_month = document.querySelector("input[name=month]");
   const input_logizard_file = document.querySelector(
-    "input[name=logizard_file"
+    "input[name=logizard_file]"
   );
 
-  alert(input_month.value);
+  formData.append("month", input_month.value);
+  formData.append("arrivals", input_logizard_file.files[0]);
+
+  const param = {
+    method: "POST",
+    body: formData,
+  };
+
+  // アップロードする
+  fetch(
+    "https://vgyjstb3vh3zs5wdnfv7x3loha0zgfmm.lambda-url.ap-northeast-1.on.aws",
+    param
+  )
+    .then((res) => {
+      hideLoading();
+      return res.json();
+    })
+    .then((json) => {
+      if (json["success"] == true) {
+        alert("支払データの同期に成功しました！");
+      } else {
+        alert("支払データの同期に失敗しました！" + json["error"]);
+      }
+      // 通信が成功した際の処理
+    })
+    .catch((error) => {
+      console.log(error);
+      alert(error);
+    });
 }
 
 function jsonToCsv(json, delimiter) {
