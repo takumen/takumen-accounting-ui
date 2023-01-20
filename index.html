@@ -31,6 +31,19 @@
           <div class="mb-3">
             Kintoneの振込先をBoardの発注先に連携してください。エラーが出る場合は、データを修正の上、再度実行してください。
           </div>
+          <div class="alert alert-warning">
+            <strong>kintoneから連携されるもの</strong>
+            <ul>
+              <li>店舗名称</li>
+              <li>住所</li>
+              <li>メールアドレス</li>
+              <li>適格請求書発行事業者の登録番号</li>
+            </ul>
+            <strong>kintoneから連携されないもの→boardへ直接入力が必要</strong>
+            <ul>
+              <li>振込先口座情報</li>
+            </ul>
+          </div>
           <div>
             <button class="btn btn-primary" onclick="syncCompanies();">
               同期する
