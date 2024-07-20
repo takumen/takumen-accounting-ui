@@ -21,26 +21,28 @@
           <a class="nav-link" aria-current="page" href="/">トップ</a>
         </li>
         <li class="nav-item">
-          <a class="nav-link active" href="/histories.html">
+          <a class="nav-link" href="/histories.html">
             インポート履歴一覧
           </a>
         </li>
         <li class="nav-item">
-          <a class="nav-link" href="/barcode.html">バーコード生成</a>
+          <a class="nav-link active" href="/barcode.html">バーコード生成</a>
         </li>
       </ul>
       <div class="card mt-3">
         <div class="card-body">
-          <table class="table" id="histories-table">
-            <thead>
-              <tr>
-                <th scope="col">日時</th>
-                <th scope="col">ログファイルURL</th>
-              </tr>
-            </thead>
-            <tbody>
-            </tbody>
-          </table>
+          <h5>バーコード生成</h5>
+          <div class="mb-3">
+            JANコードからバーコード画像を生成します。
+          </div>
+          <div>
+            <form action="https://miszeklywu7pcchznjxhjopqse0dwoqy.lambda-url.ap-northeast-1.on.aws/" method="get">
+              <div class="form-group">
+                <input type="text" id="jan" name="jan" class="form-control" placeholder="JANコード（13桁）" minlength="13" maxlength="13" required>
+              </div>
+              <button type="submit" class="btn btn-primary mt-2">送信</button>
+            </form>
+          </div>
         </div>
       </div>
     </div>
